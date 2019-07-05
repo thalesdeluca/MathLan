@@ -28,7 +28,7 @@ public class Main {
     }*/
 
     public static void main(String[] args) throws UnknownHostException, IOException {
-            new PlayerMatchController("10.20.151.186", 62548).executa();
+            new ServerMatchController(62548).executa();
 
     }
 

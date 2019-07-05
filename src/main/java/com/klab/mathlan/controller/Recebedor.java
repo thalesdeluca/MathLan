@@ -10,6 +10,7 @@ public class Recebedor implements Runnable{
         this.server = server;
     }
 
+    //recebe mensagens do servidor e printa
     public void run() {
         Scanner s = new Scanner(this.server);
         while(s.hasNextLine()) {

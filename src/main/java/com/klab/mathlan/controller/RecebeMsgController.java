@@ -13,6 +13,7 @@ public class RecebeMsgController implements Runnable {
     }
 
     public void run() {
+        //ao receber uma msg, envia para todos os clientes
         Scanner s = new Scanner(this.cliente);
         while(s.hasNext()) {
             servidor.mandaMsg(s.nextLine());

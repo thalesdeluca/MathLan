@@ -20,12 +20,14 @@ public class PlayerMatchController {
         Socket client = new Socket(this.host, this.port);
         System.out.println("CLIENTE TA DENTRO!!!!");
 
+        //Cria um recebedor para receber mensagens do servidor
+        //coloca o recebedor em uma thread
         Recebedor recebedor = new Recebedor(client.getInputStream());
         new Thread(recebedor).start();
 
+        //Le mensagens do teclado e as envia ai servidor
         Scanner teclado = new Scanner(System.in);
         PrintStream saida = new PrintStream(client.getOutputStream());
-
         while (teclado.hasNextLine()) {
             saida.println(teclado.nextLine());
         }
