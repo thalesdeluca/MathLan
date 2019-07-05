@@ -1,5 +1,6 @@
 package com.klab.mathlan.controller;
 
+import com.klab.mathlan.thread.DiscoveryThread;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,10 +10,11 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.util.ArrayList;
 
 public class PlayerListController {
-    private ArrayList<>
+    private ArrayList<InetAddress> players;
 
     @FXML
     private VBox container;
@@ -23,8 +25,12 @@ public class PlayerListController {
     @FXML
     private Button closeBtn;
 
+    public PlayerListController () {
+        players = new ArrayList<>();
+    }
+
     public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("main.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("player-list.fxml"));
         loader.setController(this);
         Parent root = loader.load();
         stage.setTitle("MathLAN");
@@ -33,5 +39,8 @@ public class PlayerListController {
         stage.setMinWidth(450);
         stage.setResizable(true);
         stage.show();
+
+        Thread discoveryThread = new Thread(DiscoveryThread.getInstance());
+        discoveryThread.start();
     }
 }
