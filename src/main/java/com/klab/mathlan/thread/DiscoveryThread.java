@@ -15,6 +15,7 @@ public class DiscoveryThread implements Runnable {
                 byte[] buffer = new byte[15000];
                 DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
                 socket.receive(packet);
+                System.out.println(socket.getInetAddress().getHostAddress());
 
                 String message = new String(packet.getData()).trim();
                 if(message.equals("SEARCH_SERVERS_MATHLAN")) {
@@ -23,6 +24,8 @@ public class DiscoveryThread implements Runnable {
                     socket.send(sendPacket);
                 }
             }
+
+
         } catch(Exception ex) {
             System.out.println("Error on listening");
         }

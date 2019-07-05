@@ -78,6 +78,7 @@ public class LobbyController {
                 server = receivePacket.getAddress();
             }
 
+            System.out.println(server.getHostAddress());
             socket.close();
         } catch(Exception exception) {
             System.out.println("Could not search ofr servers");
