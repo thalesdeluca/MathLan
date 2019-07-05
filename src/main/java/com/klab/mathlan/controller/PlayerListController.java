@@ -1,17 +1,29 @@
-package com.klab.mathlan;
+package com.klab.mathlan.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.application.Application;
 
+import java.io.IOException;
+import java.util.ArrayList;
 
-public class Main extends Application {
+public class PlayerListController {
+    private ArrayList<>
 
-    @Override
-    public void start(Stage stage) throws Exception {
+    @FXML
+    private VBox container;
+
+    @FXML
+    private Button startBtn;
+
+    @FXML
+    private Button closeBtn;
+
+    public void start(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("main.fxml"));
         loader.setController(this);
         Parent root = loader.load();
@@ -22,14 +34,4 @@ public class Main extends Application {
         stage.setResizable(true);
         stage.show();
     }
-
-    @FXML
-    private void host() {
-
-    }
-
-    public static void main(String[] args) {
-        launch(args);
-    }
-
 }
