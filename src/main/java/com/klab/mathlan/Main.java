@@ -1,6 +1,7 @@
 package com.klab.mathlan;
 
 import com.klab.mathlan.controller.MainController;
+import com.klab.mathlan.controller.PlayerMatchController;
 import com.klab.mathlan.controller.ServerMatchController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,7 +28,7 @@ public class Main {
     }*/
 
     public static void main(String[] args) throws UnknownHostException, IOException {
-            new ServerMatchController(62548).executa();
+            new PlayerMatchController("10.20.151.186", 62548).executa();
 
     }
 
