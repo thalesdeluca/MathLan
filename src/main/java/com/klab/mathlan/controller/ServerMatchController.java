@@ -18,7 +18,7 @@ public class ServerMatchController {
     }
 
     public void executa() throws IOException {
-        ServerSocket servidor = new ServerSocket();
+        ServerSocket servidor = new ServerSocket(this.porta);
         System.out.println("Porta " + this.porta + " aberta");
 
         while(true) {
