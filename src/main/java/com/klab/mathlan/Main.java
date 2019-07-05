@@ -1,5 +1,6 @@
 package com.klab.mathlan;
 
+import com.klab.mathlan.controller.MainController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,15 +13,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("main.fxml"));
-        loader.setController(this);
-        Parent root = loader.load();
-        stage.setTitle("MathLAN");
-        stage.setScene(new Scene(root, 450, 450));
-        stage.setMinHeight(450);
-        stage.setMinWidth(450);
-        stage.setResizable(true);
-        stage.show();
+        MainController mainController = new MainController();
+        mainController.start(stage);
     }
 
     @FXML
