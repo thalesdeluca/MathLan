@@ -36,8 +36,8 @@ public class MainController {
     @FXML
     public void join(ActionEvent actionEvent) {
         try {
-            LobbyController lobbyController = new LobbyController();
-            lobbyController.start(staged);
+            ConfigController configController = new ConfigController();
+            configController.start(staged);
         } catch(Exception exception) {
             System.out.println("error");
         }

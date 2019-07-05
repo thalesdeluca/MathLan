@@ -8,28 +8,24 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-import java.net.InetAddress;
-import java.util.ArrayList;
+import java.net.*;
+import java.util.Enumeration;
 
-public class PlayerListController {
-    private ArrayList<InetAddress> players;
+public class ConfigController {
+
+    private InetAddress server;
 
     @FXML
     private VBox container;
 
     @FXML
-    private Button startBtn;
-
-    @FXML
     private Button closeBtn;
 
-    public PlayerListController () {
-        players = new ArrayList<>();
-    }
+    @FXML
+    private Button connectBtn;
 
-    public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("player-list.fxml"));
+    public void start(Stage stage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("config.fxml"));
         loader.setController(this);
         Parent root = loader.load();
         stage.setTitle("MathLAN");
@@ -38,5 +34,7 @@ public class PlayerListController {
         stage.setMinWidth(450);
         stage.setResizable(true);
         stage.show();
+
+
     }
 }
