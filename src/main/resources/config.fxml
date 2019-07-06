@@ -20,12 +20,22 @@
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button fx:id="connectBtn" disable="true" mnemonicParsing="false" text="Start Server">
+            <Button fx:id="startBtn" mnemonicParsing="false" text="Start">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
          </children>
       </HBox>
+      <Label fx:id="ip" layoutX="128.0" layoutY="130.0" text="0.0.0.0">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <Label fx:id="port" layoutX="138.0" layoutY="140.0" text="62548" AnchorPane.rightAnchor="220.0" AnchorPane.topAnchor="130.0">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

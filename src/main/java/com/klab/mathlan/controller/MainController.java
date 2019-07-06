@@ -34,7 +34,7 @@ public class MainController {
     }
 
     @FXML
-    public void join(ActionEvent actionEvent) {
+    public void host(ActionEvent actionEvent) {
         try {
             ConfigController configController = new ConfigController();
             configController.start(staged);
@@ -44,7 +44,7 @@ public class MainController {
 
     }
     @FXML
-    public void host(ActionEvent actionEvent) {
+    public void join(ActionEvent actionEvent) {
         try {
             PlayerListController playerListController = new PlayerListController();
             playerListController.start(staged);

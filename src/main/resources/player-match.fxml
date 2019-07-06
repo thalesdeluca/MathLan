@@ -9,33 +9,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <HBox>
-         <children>
-            <Label text="Points:">
-               <font>
-                  <Font size="17.0" />
-               </font>
-               <padding>
-                  <Insets right="5.0" />
-               </padding>
-            </Label>
-            <Label fx:id="myPoints" text="20">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Label>
-         </children>
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
-      </HBox>
       <VBox alignment="CENTER" maxWidth="300.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="120.0">
          <children>
             <HBox>
                <children>
-                  <Label fx:id="playerA" text="playerA:">
+                  <Label fx:id="playerA" text="player 0:">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -43,7 +23,7 @@
                         <Insets right="5.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="playerAPoints" text="20">
+                  <Label fx:id="playerAPoints" text="0">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -55,7 +35,7 @@
             </HBox>
             <HBox>
                <children>
-                  <Label fx:id="playerB" text="playerB:">
+                  <Label fx:id="playerB" text="player 1:">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -63,7 +43,7 @@
                         <Insets right="5.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="playerBPoints" text="20">
+                  <Label fx:id="playerBPoints" text="0">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -75,7 +55,7 @@
             </HBox>
             <HBox>
                <children>
-                  <Label fx:id="playerB" text="playerC:">
+                  <Label fx:id="playerB" text="player 2:">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -83,7 +63,27 @@
                         <Insets right="5.0" />
                      </padding>
                   </Label>
-                  <Label fx:id="playerCPoints" text="20">
+                  <Label fx:id="playerCPoints" text="0">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label text="Player 3">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <padding>
+                        <Insets right="5.0" />
+                     </padding>
+                  </Label>
+                  <Label fx:id="playerDPoints" text="0">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -110,8 +110,13 @@
                   <Font size="16.0" />
                </font>
             </TextField>
-            <Button fx:id="sendBtn" mnemonicParsing="false" text="Enviar" />
+            <Button fx:id="sendBtn" mnemonicParsing="false" onAction="#sendAction" text="Enviar" />
          </children>
       </VBox>
+      <Label fx:id="player" alignment="CENTER" text="Player A" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

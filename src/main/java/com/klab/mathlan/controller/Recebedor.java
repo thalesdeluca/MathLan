@@ -5,16 +5,18 @@ import java.util.Scanner;
 
 public class Recebedor implements Runnable{
     private InputStream server;
+    private CodeMap codeMap;
 
-    public Recebedor(InputStream server) {
+    public Recebedor(InputStream server, CodeMap codeMap) {
         this.server = server;
+        this.codeMap = codeMap;
     }
 
     //recebe mensagens do servidor e printa
     public void run() {
         Scanner s = new Scanner(this.server);
         while(s.hasNextLine()) {
-            System.out.println(s.nextLine());
+            codeMap.assignMessage(s.nextLine());
         }
     }
 }

@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -13,16 +14,8 @@ import java.util.Enumeration;
 
 public class ConfigController {
 
-    private InetAddress server;
-
     @FXML
-    private VBox container;
-
-    @FXML
-    private Button closeBtn;
-
-    @FXML
-    private Button connectBtn;
+    private Label ip;
 
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("config.fxml"));
@@ -34,7 +27,11 @@ public class ConfigController {
         stage.setMinWidth(450);
         stage.setResizable(true);
         stage.show();
+    }
 
+    @FXML
+    public void startAction() {
 
     }
+
 }
