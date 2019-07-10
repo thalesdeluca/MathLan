@@ -56,6 +56,8 @@ public class PlayerListController implements ScreenController{
     @FXML
     private Label player;
 
+    private String[] points;
+
 
     public void start(Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("player-list.fxml"));
@@ -162,10 +164,17 @@ public class PlayerListController implements ScreenController{
                     case "OPR":
                         System.out.println("operation set");
                         operation.setText(message.substring(3));
+                        if(points != null) {
+                            playerAPoints.setText(points[0] != null ? points[0] : "-");
+                            playerBPoints.setText(points[1] != null ? points[1] : "-");
+                            playerCPoints.setText(points[2] != null ? points[2] : "-");
+                            playerDPoints.setText(points[3] != null ? points[3] : "-");
+                        }
                         break;
                     case "PTS":
                         System.out.println("test");
                         String[] msg = message.substring(3).split("[,]");
+                        points = msg;
                         playerAPoints.setText(msg[0] != null ? msg[0] : "-");
                         playerBPoints.setText(msg[1] != null ? msg[1] : "-");
                         playerCPoints.setText(msg[2] != null ? msg[2] : "-");

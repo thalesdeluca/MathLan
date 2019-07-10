@@ -15,8 +15,6 @@ public class MainController {
     @FXML
     private Button joinBtn;
 
-    @FXML
-    private Button hostBtn;
 
     public void start (Stage stage) throws Exception{
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("main.fxml"));
@@ -33,16 +31,6 @@ public class MainController {
 
     }
 
-    @FXML
-    public void host(ActionEvent actionEvent) {
-        try {
-            ConfigController configController = new ConfigController();
-            configController.start(staged);
-        } catch(Exception exception) {
-            System.out.println("error");
-        }
-
-    }
     @FXML
     public void join(ActionEvent actionEvent) {
         try {

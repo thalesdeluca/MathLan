@@ -23,15 +23,6 @@
             <Insets top="20.0" />
          </padding>
       </VBox>
-      <HBox spacing="10.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
-         <children>
-            <Button fx:id="closeBtn" mnemonicParsing="false" text="Close">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Button>
-         </children>
-      </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
             <TextField fx:id="ip" promptText="ip" />
